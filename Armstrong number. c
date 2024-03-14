@@ -1,0 +1,43 @@
+// Armstrong number using while loop
+#include <stdio.h>
+
+int main() {
+   
+   int count=0, q, cnt, result=0, rem, mul;
+   printf("Enter a number:");
+   scanf("%d", &q);
+   
+   while(q != 0)
+   {
+       q = q/10;
+       count++;
+   }
+   cnt=count;
+   while(q != 0)
+   {
+      rem = q%10;
+      while(cnt != 0)
+      {
+          mul= mul * rem;
+          cnt--;
+      }
+      
+      result = result + mul;
+      
+      cnt = count;
+      q=q/10;
+      mul=1;
+   }
+   
+   if (result == q)
+   {
+       printf("IT is armstrong number");
+   }
+   else
+   {
+       printf("It is Not a armstrong number");
+   }
+
+   
+    return 0;
+}
